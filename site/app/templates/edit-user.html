@@ -1,0 +1,54 @@
+<div class="modal show">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title"><%- name %></h4>
+      </div>
+      <div class="modal-body">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Rediger kontakt information</h3>
+          </div>
+          <div class="panel-body">
+            <dl>
+              <dt>Medlems nummer:</dt>
+                <dd><%- member_id %></dd>
+
+              <!-- 
+              <dt><label for="name">Navn:</label></dt>
+                <dd><input type="text" name="name" id="name" value="<%- name %>" class="form-control" /></dd>
+              -->
+
+              <dt><label for="email">E-Mail:</label></dt>
+                <dd><input type="email" name="email" id="email" value="<%- email %>" class="form-control" /></dd>
+
+              <dt><label for="phone">Telefon:</label></dt>
+                <dd><input type="text" name="phone" id="phone" value="<%- phone %>" class="form-control" /></dd>
+            </dl>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Skift adgangskode</h3>
+          </div>
+          <div class="panel-body">
+            <p>Udfyld de to nedenstående felter hvis du vil ændre din adgangskode.</p>
+            <dl>
+              <dt>Ny adgangskode:</dt>
+                <dd><input type="password" name="password" id="password" class="form-control" /></dd>
+
+              <dt>Gentag adgangskode:</dt>
+                <dd><input type="password" name="repeat-password" id="repeat-password" class="form-control" /></dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Gem</button>
+      </div>
+    </div>
+  </div>
+</div>

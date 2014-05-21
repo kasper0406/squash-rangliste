@@ -1,0 +1,21 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Udestående udfordring</h3>
+  </div>
+  <div class="panel-body">
+    <%
+    var bufferDate = new Date();
+    bufferDate.setDate(new Date().getDate() + 2);
+
+    if (Utils.getDate(latest_report_time).getTime() < bufferDate.getTime()) {
+    %>
+      <div class="alert alert-warning">Skal senest rapporteres d. <b><%- Utils.formatDate(latest_report_time) %></b>. Hvis resultatet ikke rapporteres vinder <%- challenger.name %>.</div>
+    <% } else { %>
+      <div class="alert alert-info">Skal senest rapporteres d. <b><%- Utils.formatDate(latest_report_time) %></b>.</div>
+    <% } %>
+
+    <table class="scores" />
+
+    <input type="submit" name="submit" value="Indrapporter" class="form-control btn btn-primary" data-loading-text="Indsender resultatet..." />
+  </div>
+</div>

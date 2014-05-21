@@ -1,0 +1,53 @@
+<div class="modal show">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title"><%- name %></h4>
+      </div>
+      <div class="modal-body">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Kontakt information</h3>
+          </div>
+          <div class="panel-body">
+            <dl>
+              <dt>Medlems nummer:</dt>
+                <dd><%- member_id %></dd>
+
+              <dt>E-Mail:</dt>
+                <dd><%- email %></dd>
+
+              <dt>Telefon:</dt>
+                <dd><%- phone %></dd>
+            </dl>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Udfordring</h3>
+          </div>
+          <div class="panel-body">
+            <% if (challengable.is) { %>
+              <button name="challenge" class="btn btn-primary form-control">Send udfordring</button>
+            <% } else if (challengable.reason === "PENDING_CHALLENGE") { %>
+              <p><%- name %> har udestående udfordring mod <%- challengable.challenging.name %> og kan derfor ikke udfordres før udfordringen er spillet.</p>
+            <% } else if (challengable.reason === "I_HAVE_PENDING_CHALLENGE") { %>
+              <p>Du kan ikke udfordre <%- name %> da du selv har en udestående udfordring. </p>
+            <% } else if (challengable.reason === "HIGH_RANK") { %>
+              <p>Du kan ikke udfordre <%- name %>, fordi <%- name %> er for højt rangeret.</p>
+            <% } else if (challengable.reason === "LOW_RANK") { %>
+              <p>Du kan ikke udfordre <%- name %>, fordi <%- name %> er rangeret lavere end dig.</p>
+            <% } else if (challengable.reason === "ME") { %>
+              <p>Du kan ikke udfordre dig selv.</p>
+            <% } %>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

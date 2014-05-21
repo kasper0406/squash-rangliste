@@ -1,0 +1,235 @@
+#ranking {
+  padding-bottom: 25px;
+}
+
+#ranking div.ranking-container {
+  width: 100%;
+  text-align: center;
+}
+
+#ranking div.ranking-container > div {
+  text-align: left;
+  display: inline-block;
+}
+
+#ranking #rankview {
+  display: table-row;
+}
+
+#ranking #rankview > div {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#ranking #rankview div.player {
+  border: 1px solid black;
+  margin: 7px;
+  display: block;
+  text-align: left;
+}
+
+#ranking #rankview div.player.challengable {
+  box-shadow: 0px 0px 7px #5cb85c;
+}
+
+#ranking #rankview div.player.pending-challenge {
+  box-shadow: 0px 0px 7px #d9534f;
+}
+
+#ranking #rankview div.player div.outer {
+  position: relative;
+}
+
+#ranking #rankview div.player span.badge {
+  position: absolute;
+  top: 50%;
+  height: 18px;
+  margin-top: -9px;
+  display: inline-block;
+  width: 30px;
+}
+
+#ranking #rankview div.player div.name {
+  white-space: normal;
+  padding-left: 35px;
+  display: inline-block;
+}
+
+#user-area {
+  
+}
+
+#user-area input[type="submit"] {
+  width: 100%;
+}
+
+#user-area div.box-view > div.box3 {
+  float: left;
+  width: 32%;
+  margin: 0.5%;
+}
+
+div.failed {
+  font-weight: bold;
+  color: white;
+  background-color: #F01010;
+  margin: 10px;
+}
+
+div.clear {
+  clear: both;
+}
+
+div.clickable {
+  cursor: pointer;
+}
+
+div.clickable:hover {
+  background-color: #AFAFAF;
+}
+
+div.challenge.current {
+  border: 1px solid black;
+  margin-bottom: 25px;
+}
+
+table.scores:nth-child(even) {
+  background-color: #f7f7f9;
+}
+
+table.scores:nth-child(odd) {
+  background-color: #fafafa;
+}
+
+table.scores tr:first-child {
+  font-weight: bold;
+}
+
+table.scores tr > td:not(.name) {
+  text-align: center;
+}
+
+table.scores tr > td.challenge-result {
+  color: white;
+}
+
+table.scores tr > td.challenge-result.won {
+  background-color: #5cb85c;
+}
+table.scores tr > td.challenge-result.lost {
+  background-color: #d9534f;
+}
+
+table.scores tr > td {
+  vertical-align: middle;
+  padding: 5px;
+}
+
+table.scores input[type="text"] {
+  text-align: center;
+}
+
+div.choose-box {
+  border: 3px solid #AAAAAA;
+  opacity: 0.7;
+  padding: 5px;
+}
+
+div.choose-box:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+div.choose-box:hover:not(.active) {
+  opacity: 0.9 !important;
+  cursor: pointer;
+}
+
+div.choose-box.active {
+  opacity: 1.0 !important;
+}
+
+div.choose-box div.header {
+  font-size: 18px;
+  border-bottom: 1px dashed #AAAAAA;
+  padding: 3px;
+}
+
+div.choose-box div.body {
+  padding: 5px;
+}
+
+div.admin-operation {
+  text-align: right;
+  width: 100%;
+  font-size: 1em;
+}
+
+div.admin-operation a:hover {
+  text-decoration: none;
+}
+
+div.admin-operation a > span {
+  margin-right: 0.3em;
+}
+
+@media (min-width: 500px) {
+  dl {
+    margin-bottom: 0px;
+  }
+
+  dl > dt {
+    float: left;
+    width: 150px;
+  }
+
+  dl > dd {
+    margin-bottom: 5px;
+  }
+}
+
+p.info {
+  text-align: center;
+  color: #A0A0A0;
+  margin-bottom: 0px;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  margin: 1em;
+  font-size: 0.8em;
+}
+
+.jumbotron {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  margin-bottom: 15px;
+}
+
+@media (min-width: 0px) {
+  .jumbotron h2 {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 0px) {
+  .jumbotron p {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 500px) {
+  .jumbotron h2 {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 500px) {
+  .jumbotron p {
+    font-size: 21px;
+  }
+}
+
+textarea.description {
+  height: 400px;
+}

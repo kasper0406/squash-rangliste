@@ -1,0 +1,23 @@
+<tr>
+  <td />
+  <td>Spiller</td>
+  <% for (var i = 1; i <= challenge.bestOf; i++) { %>
+    <td><%- i %>.</td>
+  <% } %>
+</tr>
+
+<tr>
+  <td><span class="badge"><%- challenger.rank %></span></td>
+  <td><%- challenger.name %></td>
+  <% for (var set = 1; set <= challenge.bestOf; set++) { %>
+    <td><input type="text" name="challenger_set[<%- set %>]" value="<%- score.challenger[set] %>" placeholder="-" size="2" class="form-control" /></td>
+  <% } %>
+</tr>
+
+<tr>
+  <td><span class="badge"><%- challengee.rank %></span></td>
+  <td><%- challengee.name %></td>
+  <% for (var set = 1; set <= challenge.bestOf; set++) { %>
+    <td><input type="text" name="challengee_set[<%- set %>]" value="<%- score.challengee[set] %>" placeholder="-" size="2" class="form-control" /></td>
+  <% } %>
+</tr>

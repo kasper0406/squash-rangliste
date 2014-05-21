@@ -1,0 +1,43 @@
+<div class="modal show">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Rediger udfordringsresultat</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="choose-box <%- matchPlayed ? 'active' : '' %> with-result">
+            <div class="header">
+              <input type="radio" name="result-type" value="with-result" <%- matchPlayed ? 'checked="checked"' : '' %> />
+              <span>Spillet kamp</span>
+            </div>
+
+            <div class="body">
+              <span>Angiv resultatet af kampen:</span>
+            </div>
+          </div>
+
+          <div class="choose-box <%- !matchPlayed ? 'active' : '' %> without-result">
+            <div class="header">
+              <input type="radio" name="result-type" value="without-result" <%- !matchPlayed ? 'checked="checked"' : '' %> />
+              <span>Kamp uden resultat</span>
+            </div>
+
+            <div class="body">
+              <span>Vælg vinderen af kampen:</span>
+              <select name="winner">
+                <option value="<%- challenger.member_id %>" <%- (winner.member_id === challenger.member_id) ? 'selected="selected"' : '' %>><%- challenger.name %></option>
+                <option value="<%- challengee.member_id %>" <%- (winner.member_id === challengee.member_id) ? 'selected="selected"' : '' %>><%- challengee.name %></option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Annuller</button>
+        <button type="button" class="btn btn-primary">Gem</button>
+      </div>
+    </div>
+  </div>
+</div>

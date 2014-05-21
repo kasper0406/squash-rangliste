@@ -1,0 +1,62 @@
+<% if (isAdmin) { %>
+  <div class="admin-operation">
+    <a href="#" class="edit">
+      <span class="glyphicon glyphicon-pencil" />
+      Rediger kampresultat
+    </a>
+  </div>
+<% } %>
+
+<table class="table scores">
+  <tr>
+    <% if (player !== null) { %>
+      <%
+        var symbol, resultClass;
+        if (winner.member_id === player.get('member_id')) {
+          symbol = 'V';
+          resultClass = "won";
+        } else {
+          symbol = 'T';
+          resultClass = "lost";
+        }
+      %>
+      <td rowspan="3" class="challenge-result <%- resultClass %>"><%- symbol %></td>
+    <% } %>
+
+    <td />
+    <td class="name">Navn</td>
+    <% for (var i = 1; i <= challenge.bestOf; i++) { %>
+      <td><%- i %>.</td>
+    <% } %>
+  </tr>
+
+  <% if (score.challengee[1] === null) { %>
+    <tr>
+      <td><span class="badge"><%- challenger.rank %></span></td>
+      <td class="name"><%- challenger.name %></td>
+      <td rowspan="2" colspan="<%- challenge.bestOf %>"><%- winner.name %> vandt uden kamp.</td>
+    </tr>
+
+    <tr>
+      <td><span class="badge"><%- challengee.rank %></span></td>
+      <td class="name"><%- challengee.name %></td>
+      <!-- <td rowspan="2" colspan="<%- challenge.bestOf %>" /> -->
+    </tr>
+  <% } else { %>
+    <tr>
+      <td><span class="badge"><%- challenger.rank %></span></td>
+      <td class="name"><%- challenger.name %></td>
+      <% for (var set = 1; set <= challenge.bestOf; set++) { %>
+        <td><%- score.challenger[set] %></td>
+      <% } %>
+    </tr>
+
+    <tr>
+      <td><span class="badge"><%- challengee.rank %></span></td>
+      <td class="name"><%- challengee.name %></td>
+      <% for (var set = 1; set <= challenge.bestOf; set++) { %>
+        <td><%- score.challengee[set] %></td>
+      <% } %>
+    </tr>
+  <% } %>
+</table>
